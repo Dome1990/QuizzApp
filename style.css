@@ -1,0 +1,61 @@
+body {
+    background-color: rgb(254, 250, 239) !important;
+}
+
+.quizBox {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.answer {
+    cursor: pointer;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+}
+
+.select {
+    background-color: rgb(39, 53, 92);
+    display: flex;
+    justify-content: center;
+    margin: -1px;
+}
+
+.select img {
+    height: 54px;
+    margin-top: 20px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.answerLetter {
+    margin-left: 7px;
+    width: 34px;
+    height: 34px;
+    align-items: center;
+    display: flex !important;
+    justify-content: center;
+    background-color: rgb(214, 214, 214) !important;
+}
+
+.card-title {
+    font-family: 'Rubik medium', sans-serif;
+    font-weight: 600;
+}
+
+.quizCard {
+    background-color: rgb(247, 247, 247);
+}

@@ -1,15 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuizzApp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="script.js"></script>
+    <script src="node_modules/bootstrap/"></script>
 </head>
 
 <body>
+    <div class="quizBox">
+
+        <div class="card mb-3 w-100 shadow-sm" style="max-width: 540px;">
+            <div class="row g-0 quizCard">
+                <div class="col-md-4 rounded-start select">
+                    <img src="./img/logo.png" class="img-fluid rounded-start">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 id="question" class="card-title">Question</h5>
+                        <div class="answers">
+                            <div class="card answer mb-2">
+                                <div class="card answerLetter">
+                                    <b>A</b>
+                                </div>
+                                <div class="card-body">
+                                    Answer
+                                </div>
+                            </div>
+                            <div class="card answer mb-2">
+                                <div class="card answerLetter">
+                                    <b>B</b>
+                                </div>
+                                <div class="card-body">
+                                    Answer
+                                </div>
+                            </div>
+                            <div class="card answer mb-2">
+                                <div class="card answerLetter">
+                                    <b>C</b>
+                                </div>
+                                <div class="card-body">
+                                    Answer
+                                </div>
+                            </div>
+                            <div class="card answer mb-2">
+                                <div class="card answerLetter">
+                                    <b>D</b>
+                                </div>
+                                <div class="card-body">
+                                    Answer
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
 </body>
+
 </html>
