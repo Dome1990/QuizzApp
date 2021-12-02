@@ -7,4 +7,4 @@ let questions = [
         "answer_4" : "Justin Bieber.",
         "right_answer" : 3
     }
-]
+];
