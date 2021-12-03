@@ -31,3 +31,17 @@ function disableButtons() {
         document.getElementById('answer_' + i).parentNode.disabled = true;
     }
 }
+
+function nextQuestion() {
+    if (currentQuestion < questions.length - 1) {
+        currentQuestion++;
+        init();
+    }
+}
+
+function lastQuestion() {
+    if (currentQuestion > 0) {
+        currentQuestion--;
+        init();
+    }
+}

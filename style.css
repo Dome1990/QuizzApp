@@ -71,3 +71,23 @@ body {
 .wrongAnswer{
     background-color: rgb(255, 163, 164) !important;
 }
+
+.nextPrev{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nextPrevBtn{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 50%;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    bottom: -40px;
+}
