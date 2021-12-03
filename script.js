@@ -20,7 +20,14 @@ function checkAnswer(selected) {
     }
     else {
         document.getElementById(selected).parentNode.classList.add('wrongAnswer');
-        document.getElementById('answer_'+righAnswerNumber).parentNode.classList.add('rightAnswer');
+        document.getElementById('answer_' + righAnswerNumber).parentNode.classList.add('rightAnswer');
     }
     init();
+    disableButtons();
+}
+
+function disableButtons() {
+    for (let i = 1; i <= 4; i++) {
+        document.getElementById('answer_' + i).parentNode.disabled = true;
+    }
 }

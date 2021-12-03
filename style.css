@@ -17,7 +17,6 @@ body {
 }
 
 .answer {
-    cursor: pointer;
     display: flex !important;
     flex-direction: row !important;
     align-items: center;
