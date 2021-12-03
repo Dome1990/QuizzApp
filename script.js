@@ -1,13 +1,26 @@
-function init (){
-    let question = questions[0]['question'];
-    let answer_1 = questions[0]['answer_1'];
-    let answer_2 = questions[0]['answer_2'];
-    let answer_3 = questions[0]['answer_3'];
-    let answer_4 = questions[0]['answer_4'];
 
-    document.getElementById('question').innerHTML = question;
-    document.getElementById('answer_1').innerHTML = answer_1;
-    document.getElementById('answer_2').innerHTML = answer_2;
-    document.getElementById('answer_3').innerHTML = answer_3;
-    document.getElementById('answer_4').innerHTML = answer_4;
+let currentQuestion = 0;
+
+function init() {
+    let question = questions[currentQuestion];
+
+    document.getElementById('question').innerHTML = question['question'];
+    document.getElementById('answer_1').innerHTML = question['answer_1'];
+    document.getElementById('answer_2').innerHTML = question['answer_2'];
+    document.getElementById('answer_3').innerHTML = question['answer_3'];
+    document.getElementById('answer_4').innerHTML = question['answer_4'];
+}
+
+function checkAnswer(selected) {
+    let selectedNumber = selected.substr(selected.length - 1);
+    let righAnswerNumber = questions[currentQuestion]['right_answer'];
+
+    if (selectedNumber == righAnswerNumber) {
+        document.getElementById(selected).parentNode.classList.add('rightAnswer');
+    }
+    else {
+        document.getElementById(selected).parentNode.classList.add('wrongAnswer');
+        document.getElementById('answer_'+righAnswerNumber).parentNode.classList.add('rightAnswer');
+    }
+    init();
 }

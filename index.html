@@ -18,7 +18,7 @@
     <script src="questions.js"></script>
 </head>
 
-<body>
+<body onload="init()">
     <div class="quizBox">
 
         <div class="card mb-3 w-100 shadow-sm" style="max-width: 540px;">
@@ -30,38 +30,38 @@
                     <div class="card-body">
                         <h5 id="question" class="card-title">Question</h5>
                         <div class="answers">
-                            <div class="card answer mb-2">
+                            <button onclick="checkAnswer('answer_1')" class="card answer mb-2">
                                 <div class="card answerLetter">
                                     <b>A</b>
                                 </div>
                                 <div id="answer_1" class="card-body">
                                     Answer
                                 </div>
-                            </div>
-                            <div class="card answer mb-2">
+                            </button>
+                            <button onclick="checkAnswer('answer_2')" class="card answer mb-2">
                                 <div class="card answerLetter">
                                     <b>B</b>
                                 </div>
                                 <div id="answer_2" class="card-body">
                                     Answer
                                 </div>
-                            </div>
-                            <div class="card answer mb-2">
+                            </button>
+                            <button onclick="checkAnswer('answer_3')" class="card answer mb-2">
                                 <div class="card answerLetter">
                                     <b>C</b>
                                 </div>
                                 <div id="answer_3" class="card-body">
                                     Answer
                                 </div>
-                            </div>
-                            <div class="card answer mb-2">
+                            </button>
+                            <button onclick="checkAnswer('answer_4')" class="card answer mb-2">
                                 <div class="card answerLetter">
                                     <b>D</b>
                                 </div>
                                 <div id="answer_4" class="card-body">
                                     Answer
                                 </div>
-                            </div>
+                            </button>
                         </div>
                     </div>
                 </div>

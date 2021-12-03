@@ -23,6 +23,11 @@ body {
     align-items: center;
 }
 
+.answer:hover {
+    background-color: rgba(0, 0, 0, 0.005);
+    transition: all 255ms ease-in-out;
+}
+
 .select {
     background-color: rgb(39, 53, 92);
     display: flex;
@@ -58,4 +63,12 @@ body {
 
 .quizCard {
     background-color: rgb(247, 247, 247);
+}
+
+.rightAnswer{
+    background-color: rgb(183, 247, 153) !important;
+}
+
+.wrongAnswer{
+    background-color: rgb(255, 163, 164) !important;
 }
