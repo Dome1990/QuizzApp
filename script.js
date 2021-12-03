@@ -32,10 +32,19 @@ function disableButtons() {
     }
 }
 
+function enableButtons() {
+    for (let i = 1; i <= 4; i++) {
+        document.getElementById('answer_' + i).parentNode.disabled = false;
+        document.getElementById('answer_' + i).parentNode.classList.remove('rightAnswer');
+        document.getElementById('answer_' + i).parentNode.classList.remove('wrongAnswer');
+    }
+}
+
 function nextQuestion() {
     if (currentQuestion < questions.length - 1) {
         currentQuestion++;
         init();
+        enableButtons();
     }
 }
 
