@@ -80,16 +80,20 @@ body {
 }
 
 .nextPrevBtn{
-    border-style: solid;
-    border-width: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
     border-radius: 50%;
-    font-weight: bold;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    cursor: pointer;
+    height: 26px;
+    width: 26px;
     position: relative;
     bottom: -40px;
+    background-color: rgb(221, 221, 245);
+}
+
+.nextPrevBtn img {
+    padding: 4px;
 }
 
 .btn-danger {
