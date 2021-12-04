@@ -31,6 +31,9 @@ function checkAnswer(selected) {
         enableNextQuestionBtn();
     }
     finishedQuestions++;
+    let progress = Math.round((finishedQuestions)/questions.length*100)+`%`;
+    document.getElementById('progressBar').style = `width: ${progress};`;
+    document.getElementById('progressBar').innerHTML = progress;
     init();
     enableLastQuestionBtn();
     disableButtons();

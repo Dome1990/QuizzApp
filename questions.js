@@ -28,12 +28,19 @@ let questions = [
         "answer_3": "Warum sollte ich alles Tagsüber schließen?",
         "answer_4": "Tags müssen generell nicht geschlossen werden.",
         "right_answer": 1
-    },{
+    }, {
         "question": "Wieviel verschiedene h-Tags gibt es?",
         "answer_1": "3",
         "answer_2": "1",
         "answer_3": "6",
         "answer_4": "9",
-        "right_answer": 3 
+        "right_answer": 3
+    }, {
+        "question": "Wieviel verschiedene h-Tags gibt es?",
+        "answer_1": "3",
+        "answer_2": "1",
+        "answer_3": "6",
+        "answer_4": "9",
+        "right_answer": 3
     }
 ];
