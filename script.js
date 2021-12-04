@@ -1,6 +1,7 @@
 
 let currentQuestion = 0;
 let finishedQuestions = 0;
+let myAnswers = [];
 
 function init() {
     let question = questions[currentQuestion];
@@ -11,10 +12,12 @@ function init() {
 }
 
 function checkAnswer(selected) {
+    myAnswers.push(selected);
     let selectedNumber = selected.substr(selected.length - 1);
     let righAnswerNumber = questions[currentQuestion]['right_answer'];
     if (selectedNumber == righAnswerNumber) {
         document.getElementById(selected).parentNode.classList.add('rightAnswer');
+        document.getElementById('answerLetter' + selectedNumber).classList.add('btn-success');
     }
     else {
         document.getElementById(selected).parentNode.classList.add('wrongAnswer');
@@ -22,10 +25,28 @@ function checkAnswer(selected) {
         document.getElementById('answer_' + righAnswerNumber).parentNode.classList.add('rightAnswer');
         document.getElementById('answerLetter' + righAnswerNumber).classList.add('btn-success');
     };
+    if (currentQuestion != questions.length-1){
+        enableNextQuestionBtn();
+    }
     finishedQuestions++;
     init();
     enableLastQuestionBtn();
-    enableNextQuestionBtn();
+    disableButtons();
+}
+
+function loadMyAnswers(selected){
+    let selectedNumber = selected.substr(selected.length - 1);
+    let righAnswerNumber = questions[currentQuestion]['right_answer'];
+    if (selectedNumber == righAnswerNumber) {
+        document.getElementById(selected).parentNode.classList.add('rightAnswer');
+        document.getElementById('answerLetter' + selectedNumber).classList.add('btn-success');
+    }
+    else {
+        document.getElementById(selected).parentNode.classList.add('wrongAnswer');
+        document.getElementById('answerLetter' + selectedNumber).classList.add('btn-danger');
+        document.getElementById('answer_' + righAnswerNumber).parentNode.classList.add('rightAnswer');
+        document.getElementById('answerLetter' + righAnswerNumber).classList.add('btn-success');
+    };
     disableButtons();
 }
 
@@ -54,22 +75,30 @@ function enableNextQuestionBtn() {
 }
 
 function disableNextQuestionBtn() {
-    if (currentQuestion == finishedQuestions) {
+    if (currentQuestion == finishedQuestions || currentQuestion == questions.length-1) {
         document.getElementById('nextQuestion').disabled = true;
     }
 }
 
 function nextQuestion() {
-    if (currentQuestion < questions.length - 1) {
+    if (currentQuestion < questions.length - 1 && currentQuestion < finishedQuestions-1) {
+        currentQuestion++;
+        enableButtons();
+        init();
+        loadMyAnswers(myAnswers[currentQuestion]);
+    }
+    else{
         currentQuestion++;
         init();
         enableButtons();
-    };
+    }
 }
 
 function lastQuestion() {
     if (currentQuestion > 0) {
         currentQuestion--;
+        enableButtons();
         init();
+        loadMyAnswers(myAnswers[currentQuestion]);
     };
 }
