@@ -6,6 +6,8 @@ let myAnswers = [];
 function init() {
     let question = questions[currentQuestion];
     document.getElementById('question').innerHTML = question['question'];
+    document.getElementById('currentQuestion').innerHTML = currentQuestion+1;
+    document.getElementById('totalNumberOfQuestions').innerHTML = questions.length;
     for (let i = 1; i <= 4; i++) {
         document.getElementById('answer_' + i).innerHTML = question['answer_' + i];
     };
