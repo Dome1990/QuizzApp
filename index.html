@@ -31,7 +31,7 @@
                         <h5 id="question" class="card-title">Question</h5>
                         <div class="answers">
                             <button onclick="checkAnswer('answer_1')" class="card answer mb-2">
-                                <div class="card answerLetter">
+                                <div id="answerLetter1" class="card answerLetter">
                                     <b>A</b>
                                 </div>
                                 <div id="answer_1" class="card-body">
@@ -39,7 +39,7 @@
                                 </div>
                             </button>
                             <button onclick="checkAnswer('answer_2')" class="card answer mb-2">
-                                <div class="card answerLetter">
+                                <div  id="answerLetter2" class="card answerLetter">
                                     <b>B</b>
                                 </div>
                                 <div id="answer_2" class="card-body">
@@ -47,7 +47,7 @@
                                 </div>
                             </button>
                             <button onclick="checkAnswer('answer_3')" class="card answer mb-2">
-                                <div class="card answerLetter">
+                                <div id="answerLetter3" class="card answerLetter">
                                     <b>C</b>
                                 </div>
                                 <div id="answer_3" class="card-body">
@@ -55,7 +55,7 @@
                                 </div>
                             </button>
                             <button onclick="checkAnswer('answer_4')" class="card answer mb-2">
-                                <div class="card answerLetter">
+                                <div  id="answerLetter4" class="card answerLetter">
                                     <b>D</b>
                                 </div>
                                 <div id="answer_4" class="card-body">
@@ -65,8 +65,8 @@
                         </div>
                     </div>
                     <div class="nextPrev">
-                        <div onclick="lastQuestion()" class="nextPrevBtn"><</div>
-                        <div onclick="nextQuestion()" class="nextPrevBtn">></div>
+                        <button disabled id="lastQuestion" onclick="lastQuestion(); enableNextQuestionBtn()" class="nextPrevBtn"><</button>
+                        <button disabled id="nextQuestion" onclick="nextQuestion(); disableNextQuestionBtn()" class="nextPrevBtn">></button>
                     </div>
                 </div>
             </div>

@@ -91,3 +91,13 @@ body {
     position: relative;
     bottom: -40px;
 }
+
+.btn-danger {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+}
+
+.btn-success{
+    background-color: #198754 !important;
+    border-color: #198754 !important;
+}
