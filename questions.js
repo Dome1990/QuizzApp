@@ -36,11 +36,11 @@ let questions = [
         "answer_4": "9",
         "right_answer": 3
     }, {
-        "question": "Wieviel verschiedene h-Tags gibt es?",
-        "answer_1": "3",
-        "answer_2": "1",
-        "answer_3": "6",
-        "answer_4": "9",
-        "right_answer": 3
+        "question": "Mit welchem Tag wird ein Link bestimmt?",
+        "answer_1": "&lti>",
+        "answer_2": "&lta>",
+        "answer_3": "&ltb>",
+        "answer_4": "&ltg>",
+        "right_answer": 2
     }
 ];

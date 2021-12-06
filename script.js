@@ -37,6 +37,7 @@ function checkAnswer(selected) {
     init();
     enableLastQuestionBtn();
     disableButtons();
+    showEndscreenBtn();
 }
 
 function loadMyAnswers(selected){
@@ -53,6 +54,17 @@ function loadMyAnswers(selected){
         document.getElementById('answerLetter' + righAnswerNumber).classList.add('btn-success');
     };
     disableButtons();
+}
+
+function showEndscreenBtn(){
+    if (finishedQuestions == questions.length){
+        document.getElementById('endscreenBtn').style.display = 'unset';
+    }
+}
+
+function showEndscreen(){
+    document.getElementById('endscreen').style.display = 'unset';
+    document.getElementById('quizArea').style.display = 'none';
 }
 
 function disableButtons() {

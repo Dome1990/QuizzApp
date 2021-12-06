@@ -1,10 +1,10 @@
 body {
     background-color: rgb(254, 250, 239) !important;
+    margin: 0;
 }
 
 .quizBox {
-    height: 100vh;
-    width: 100vw;
+    height: 95vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -109,4 +109,21 @@ body {
 .questionNumber{
     text-align: center;
     font-size: x-small;
+}
+
+.quizbottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quizbottom button{
+    width: max-content;
+    margin-bottom: 6px;
+    display: none;
+}
+
+.endscreen{
+    display: none;
 }

@@ -25,13 +25,19 @@
         </div>
     </header>
 
+
     <div class="quizBox">
         <div class="card mb-3 w-100 shadow-sm" style="max-width: 540px;">
             <div class="row g-0 quizCard">
                 <div class="col-md-4 rounded-start select">
                     <img src="./img/logo.png" class="img-fluid rounded-start">
                 </div>
-                <div class="col-md-8">
+
+                <div id="endscreen" class="endscreen">
+                    endscreen
+                </div>
+                
+                <div id="quizArea" class="col-md-8">
                     <div class="card-body">
                         <h5 id="question" class="card-title">Question</h5>
                         <div class="answers">
@@ -69,8 +75,14 @@
                             </button>
                         </div>
                     </div>
-                    <div class="questionNumber">Frage <b id="currentQuestion">ccc</b> von <b
-                            id="totalNumberOfQuestions">xxx</b></div>
+
+                    <div class="quizbottom">
+                        <button onclick="showEndscreen()" id="endscreenBtn" type="button" class="btn btn-primary resultbtn">Ergebnis</button>
+                        <div class="questionNumber">
+                            Frage <b id="currentQuestion">ccc</b> von <b id="totalNumberOfQuestions">xxx</b>
+                        </div>
+                    </div>
+
                     <div class="nextPrev">
                         <button disabled id="lastQuestion" onclick="lastQuestion(); enableNextQuestionBtn()"
                             class="nextPrevBtn">
