@@ -1,4 +1,5 @@
 let questions = [
+    html = [
     {
         "question": "Wer hat HTML Erfunden?",
         "answer_1": "Robbie Williams.",
@@ -42,5 +43,73 @@ let questions = [
         "answer_3": "&ltb>",
         "answer_4": "&ltg>",
         "right_answer": 2
-    }
+    }],
+    css = [
+        {
+            "question": "Mit welchem Tag wird ein Link bestimmt?",
+            "answer_1": "&lti>",
+            "answer_2": "&lta>",
+            "answer_3": "&ltb>",
+            "answer_4": "&ltg>",
+            "right_answer": 2
+        },
+        {
+            "question": "Mit welchem Tag wird ein Link bestimmt?",
+            "answer_1": "&lti>",
+            "answer_2": "&lta>",
+            "answer_3": "&ltb>",
+            "answer_4": "&ltg>",
+            "right_answer": 2
+        },
+        {
+            "question": "Mit welchem Tag wird ein Link bestimmt?",
+            "answer_1": "&lti>",
+            "answer_2": "&lta>",
+            "answer_3": "&ltb>",
+            "answer_4": "&ltg>",
+            "right_answer": 2
+        },
+        {
+            "question": "Mit welchem Tag wird ein Link bestimmt?",
+            "answer_1": "&lti>",
+            "answer_2": "&lta>",
+            "answer_3": "&ltb>",
+            "answer_4": "&ltg>",
+            "right_answer": 2
+        }
+    ],
+    js = [
+        {
+            "question": "Mit welchem Tag wird ein Link bestimmt?",
+            "answer_1": "&lti>",
+            "answer_2": "&lta>",
+            "answer_3": "&ltb>",
+            "answer_4": "&ltg>",
+            "right_answer": 2
+        },
+        {
+            "question": "Mit welchem Tag wird ein Link bestimmt?",
+            "answer_1": "&lti>",
+            "answer_2": "&lta>",
+            "answer_3": "&ltb>",
+            "answer_4": "&ltg>",
+            "right_answer": 2
+        },
+        {
+            "question": "Mit welchem Tag wird ein Link bestimmt?",
+            "answer_1": "&lti>",
+            "answer_2": "&lta>",
+            "answer_3": "&ltb>",
+            "answer_4": "&ltg>",
+            "right_answer": 2
+        },
+        {
+            "question": "Mit welchem Tag wird ein Link bestimmt?",
+            "answer_1": "&lti>",
+            "answer_2": "&lta>",
+            "answer_3": "&ltb>",
+            "answer_4": "&ltg>",
+            "right_answer": 2
+        }
+    ]
 ];

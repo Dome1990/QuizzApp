@@ -1,14 +1,17 @@
-
+let questionSection = 0;
 let currentQuestion = 0;
 let finishedQuestions = 0;
-let myAnswers = [];
+let audio_success = new Audio ('audio/success.mp3');
+let audio_fail = new Audio ('audio/fail.mp3')
+let myAnswers = [];         //store the answers for the lastQuestion() function
 let score = 0;
 
 function init() {
-    let question = questions[currentQuestion];
+    let question = questions[questionSection][currentQuestion];
     document.getElementById('question').innerHTML = question['question'];
-    document.getElementById('currentQuestion').innerHTML = currentQuestion+1;
-    document.getElementById('totalNumberOfQuestions').innerHTML = questions.length;
+    document.getElementById('currentQuestion').innerHTML = currentQuestion + 1;
+    document.getElementById('totalNumberOfQuestions').innerHTML = questions[questionSection].length;
+    document.getElementById('selectedCat' + questionSection).style.backgroundColor = 'white';
     for (let i = 1; i <= 4; i++) {
         document.getElementById('answer_' + i).innerHTML = question['answer_' + i];
     };
@@ -17,19 +20,21 @@ function init() {
 function checkAnswer(selected) {
     myAnswers.push(selected);
     let selectedNumber = selected.substr(selected.length - 1);
-    let righAnswerNumber = questions[currentQuestion]['right_answer'];
+    let righAnswerNumber = questions[questionSection][currentQuestion]['right_answer'];
     if (selectedNumber == righAnswerNumber) {
         document.getElementById(selected).parentNode.classList.add('rightAnswer');
         document.getElementById('answerLetter' + selectedNumber).classList.add('btn-success');
         score++;
+        audio_success.play();
     }
     else {
         document.getElementById(selected).parentNode.classList.add('wrongAnswer');
         document.getElementById('answerLetter' + selectedNumber).classList.add('btn-danger');
         document.getElementById('answer_' + righAnswerNumber).parentNode.classList.add('rightAnswer');
         document.getElementById('answerLetter' + righAnswerNumber).classList.add('btn-success');
+        audio_fail.play();
     };
-    if (currentQuestion != questions.length-1){
+    if (currentQuestion != questions[questionSection].length - 1) {
         enableNextQuestionBtn();
     }
     finishedQuestions++;
@@ -40,9 +45,9 @@ function checkAnswer(selected) {
     showEndscreenBtn();
 }
 
-function loadMyAnswers(selected){
+function loadMyAnswers(selected) {
     let selectedNumber = selected.substr(selected.length - 1);
-    let righAnswerNumber = questions[currentQuestion]['right_answer'];
+    let righAnswerNumber = questions[questionSection][currentQuestion]['right_answer'];
     if (selectedNumber == righAnswerNumber) {
         document.getElementById(selected).parentNode.classList.add('rightAnswer');
         document.getElementById('answerLetter' + selectedNumber).classList.add('btn-success');
@@ -56,20 +61,40 @@ function loadMyAnswers(selected){
     disableButtons();
 }
 
-function showEndscreenBtn(){
-    if (finishedQuestions == questions.length){
+function changeCategory(i) {
+    questionSection = i;
+    for (let i = 0; i < questions.length; i++) {
+        document.getElementById('selectedCat' + i).style.backgroundColor = 'transparent';
+    }
+    restart();
+}
+
+function restart() {
+    currentQuestion = 0;
+    finishedQuestions = 0;
+    myAnswers = [];
+    score = 0;
+
+    updateProgressbar();
+    hideEndscreen();
+    enableButtons();
+    init();
+}
+
+function showEndscreenBtn() {
+    if (finishedQuestions == questions[questionSection].length) {
         document.getElementById('endscreenBtn').style.display = 'unset';
     }
 }
 
-function showEndscreen(){
+function showEndscreen() {
     document.getElementById('endscreen').style.display = 'flex';
     document.getElementById('quizArea').style.display = 'none';
     document.getElementById('tropy').style.display = 'unset';
     showScore();
 }
 
-function hideEndscreen(){
+function hideEndscreen() {
     document.getElementById('endscreen').style.display = 'none';
     document.getElementById('quizArea').style.display = 'unset';
     document.getElementById('tropy').style.display = 'none';
@@ -101,19 +126,19 @@ function enableNextQuestionBtn() {
 }
 
 function disableNextQuestionBtn() {
-    if (currentQuestion == finishedQuestions || currentQuestion == questions.length-1) {
+    if (currentQuestion == finishedQuestions || currentQuestion == questions[questionSection].length - 1) {
         document.getElementById('nextQuestion').disabled = true;
     }
 }
 
 function nextQuestion() {
-    if (currentQuestion < questions.length - 1 && currentQuestion < finishedQuestions-1) {
+    if (currentQuestion < questions[questionSection].length - 1 && currentQuestion < finishedQuestions - 1) {
         currentQuestion++;
         enableButtons();
         init();
         loadMyAnswers(myAnswers[currentQuestion]);
     }
-    else{
+    else {
         currentQuestion++;
         init();
         enableButtons();
@@ -129,25 +154,14 @@ function lastQuestion() {
     };
 }
 
-function showScore(){
+function showScore() {
     document.getElementById('score').innerHTML = `
-    <b>  ${score}/${questions.length}</b>
+    <b>  ${score}/${questions[questionSection].length}</b>
     `
 }
 
-function restart(){
-currentQuestion = 0;
-finishedQuestions = 0;
-myAnswers = [];
-score = 0;
-updateProgressbar();
-hideEndscreen();
-enableButtons();
-init();
-}
-
-function updateProgressbar(){
-    let progress = Math.round((finishedQuestions)/questions.length*100)+`%`;
+function updateProgressbar() {
+    let progress = Math.round((finishedQuestions) / questions[questionSection].length * 100) + `%`;
     document.getElementById('progressBar').style = `width: ${progress};`;
     document.getElementById('progressBar').innerHTML = progress;
 }

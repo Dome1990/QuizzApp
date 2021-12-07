@@ -1,6 +1,7 @@
 body {
     background-color: rgb(254, 250, 239) !important;
     margin: 0;
+    font-family: 'Rubik', sans-serif;
 }
 
 .quizBox {
