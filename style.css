@@ -29,14 +29,43 @@ body {
 
 .select {
     background-color: rgb(39, 53, 92);
+    color: white;
     display: flex;
-    justify-content: center;
-    margin: -1px;
+    flex-direction: column;
 }
 
 .select img {
     height: 54px;
     margin-top: 20px;
+    width: max-content;
+    align-self: center;
+}
+
+.category {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0px;
+    margin: auto;
+    margin-left: 0;
+}
+
+.selected {
+    background-color: transparent;
+    width: 6px;
+    margin: 0 4px 0 1px
+}
+
+.choice{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+
+.choice:hover{
+    transform: scale(1.1);
+    transition: all ease-in-out 255ms;
 }
 
 .card-body {
@@ -64,22 +93,22 @@ body {
     background-color: rgb(247, 247, 247);
 }
 
-.rightAnswer{
+.rightAnswer {
     background-color: rgb(183, 247, 153) !important;
 }
 
-.wrongAnswer{
+.wrongAnswer {
     background-color: rgb(255, 163, 164) !important;
 }
 
-.nextPrev{
+.nextPrev {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
 
-.nextPrevBtn{
+.nextPrevBtn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,12 +130,12 @@ body {
     border-color: #dc3545 !important;
 }
 
-.btn-success{
+.btn-success {
     background-color: #198754 !important;
     border-color: #198754 !important;
 }
 
-.questionNumber{
+.questionNumber {
     text-align: center;
     font-size: x-small;
 }
@@ -118,12 +147,51 @@ body {
     align-items: center;
 }
 
-.quizbottom button{
+.quizbottom button {
     width: max-content;
     margin-bottom: 6px;
     display: none;
 }
 
-.endscreen{
+.endscreen {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: unset !important;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 26px;
+    height: 60vh;
+}
+
+.endscreen img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 26px;
+    text-align: center;
+    font-family: 'Rubik regular', sans-serif;
+    ;
+}
+
+.endscreen button {
+    margin-top: 21px;
+}
+
+.yourScore {
+    color: rgb(241, 136, 53);
+    font-weight: bold;
+}
+
+.tropy {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 1;
+    height: 50vh;
     display: none;
 }

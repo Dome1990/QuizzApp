@@ -24,19 +24,35 @@
             <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0;"></div>
         </div>
     </header>
-
+    <img id="tropy" class="tropy" src="./img/tropy.png">
 
     <div class="quizBox">
         <div class="card mb-3 w-100 shadow-sm" style="max-width: 540px;">
             <div class="row g-0 quizCard">
                 <div class="col-md-4 rounded-start select">
                     <img src="./img/logo.png" class="img-fluid rounded-start">
+                    <div class="category">
+                        <div class="choice">
+                           <div class="selected"></div> <h4>HTML</h4>
+                        </div>
+                        <div class="choice">
+                            <div class="selected"></div><h4>CSS</h4>
+                        </div>
+                        <div class="choice">
+                            <div class="selected"></div><h4>JS</h4>
+                        </div>
+                    </div>
                 </div>
 
                 <div id="endscreen" class="endscreen">
-                    endscreen
+                    <img src="./img/brain result.png">
+                    <h4>Complete </br>HTML Quiz</h4>
+                    <div>
+                        <span class="yourScore">Your Score</span><span id="score">xxx</span>
+                    </div>
+                    <button onclick="restart()" type="button" class="btn btn-primary">Neustart</button>
                 </div>
-                
+
                 <div id="quizArea" class="col-md-8">
                     <div class="card-body">
                         <h5 id="question" class="card-title">Question</h5>
@@ -77,7 +93,8 @@
                     </div>
 
                     <div class="quizbottom">
-                        <button onclick="showEndscreen()" id="endscreenBtn" type="button" class="btn btn-primary resultbtn">Ergebnis</button>
+                        <button onclick="showEndscreen()" id="endscreenBtn" type="button"
+                            class="btn btn-primary resultbtn">Ergebnis</button>
                         <div class="questionNumber">
                             Frage <b id="currentQuestion">ccc</b> von <b id="totalNumberOfQuestions">xxx</b>
                         </div>

@@ -2,6 +2,7 @@
 let currentQuestion = 0;
 let finishedQuestions = 0;
 let myAnswers = [];
+let score = 0;
 
 function init() {
     let question = questions[currentQuestion];
@@ -20,6 +21,7 @@ function checkAnswer(selected) {
     if (selectedNumber == righAnswerNumber) {
         document.getElementById(selected).parentNode.classList.add('rightAnswer');
         document.getElementById('answerLetter' + selectedNumber).classList.add('btn-success');
+        score++;
     }
     else {
         document.getElementById(selected).parentNode.classList.add('wrongAnswer');
@@ -31,9 +33,7 @@ function checkAnswer(selected) {
         enableNextQuestionBtn();
     }
     finishedQuestions++;
-    let progress = Math.round((finishedQuestions)/questions.length*100)+`%`;
-    document.getElementById('progressBar').style = `width: ${progress};`;
-    document.getElementById('progressBar').innerHTML = progress;
+    updateProgressbar();
     init();
     enableLastQuestionBtn();
     disableButtons();
@@ -63,8 +63,17 @@ function showEndscreenBtn(){
 }
 
 function showEndscreen(){
-    document.getElementById('endscreen').style.display = 'unset';
+    document.getElementById('endscreen').style.display = 'flex';
     document.getElementById('quizArea').style.display = 'none';
+    document.getElementById('tropy').style.display = 'unset';
+    showScore();
+}
+
+function hideEndscreen(){
+    document.getElementById('endscreen').style.display = 'none';
+    document.getElementById('quizArea').style.display = 'unset';
+    document.getElementById('tropy').style.display = 'none';
+    document.getElementById('endscreenBtn').style.display = 'none';
 }
 
 function disableButtons() {
@@ -118,4 +127,27 @@ function lastQuestion() {
         init();
         loadMyAnswers(myAnswers[currentQuestion]);
     };
+}
+
+function showScore(){
+    document.getElementById('score').innerHTML = `
+    <b>  ${score}/${questions.length}</b>
+    `
+}
+
+function restart(){
+currentQuestion = 0;
+finishedQuestions = 0;
+myAnswers = [];
+score = 0;
+updateProgressbar();
+hideEndscreen();
+enableButtons();
+init();
+}
+
+function updateProgressbar(){
+    let progress = Math.round((finishedQuestions)/questions.length*100)+`%`;
+    document.getElementById('progressBar').style = `width: ${progress};`;
+    document.getElementById('progressBar').innerHTML = progress;
 }
