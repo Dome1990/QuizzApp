@@ -1,8 +1,8 @@
 let questionSection = 0;
 let currentQuestion = 0;
 let finishedQuestions = 0;
-let audio_success = new Audio ('audio/success.mp3');
-let audio_fail = new Audio ('audio/fail.mp3')
+let audio_success = new Audio('audio/success.mp3');
+let audio_fail = new Audio('audio/fail.mp3')
 let myAnswers = [];         //store the answers for the lastQuestion() function
 let score = 0;
 
@@ -21,28 +21,43 @@ function checkAnswer(selected) {
     myAnswers.push(selected);
     let selectedNumber = selected.substr(selected.length - 1);
     let righAnswerNumber = questions[questionSection][currentQuestion]['right_answer'];
-    if (selectedNumber == righAnswerNumber) {
-        document.getElementById(selected).parentNode.classList.add('rightAnswer');
-        document.getElementById('answerLetter' + selectedNumber).classList.add('btn-success');
-        score++;
-        audio_success.play();
+    if (rightAnswer(selectedNumber, righAnswerNumber)) {
+        markRightAnswer(selected, selectedNumber);
     }
     else {
-        document.getElementById(selected).parentNode.classList.add('wrongAnswer');
-        document.getElementById('answerLetter' + selectedNumber).classList.add('btn-danger');
-        document.getElementById('answer_' + righAnswerNumber).parentNode.classList.add('rightAnswer');
-        document.getElementById('answerLetter' + righAnswerNumber).classList.add('btn-success');
-        audio_fail.play();
+        markWrongAnswer(selected, selectedNumber, righAnswerNumber);
     };
-    if (currentQuestion != questions[questionSection].length - 1) {
+    if (anotherQuestionAvailable()) {
         enableNextQuestionBtn();
-    }
+    };
     finishedQuestions++;
     updateProgressbar();
-    init();
     enableLastQuestionBtn();
     disableButtons();
     showEndscreenBtn();
+}
+
+function rightAnswer(selectedNumber, righAnswerNumber) {
+    return selectedNumber == righAnswerNumber;
+}
+
+function markRightAnswer(selected, selectedNumber) {
+    document.getElementById(selected).parentNode.classList.add('rightAnswer');
+    document.getElementById('answerLetter' + selectedNumber).classList.add('btn-success');
+    score++;
+    audio_success.play();
+}
+
+function markWrongAnswer(selected, selectedNumber, righAnswerNumber) {
+    document.getElementById(selected).parentNode.classList.add('wrongAnswer');
+    document.getElementById('answerLetter' + selectedNumber).classList.add('btn-danger');
+    document.getElementById('answer_' + righAnswerNumber).parentNode.classList.add('rightAnswer');
+    document.getElementById('answerLetter' + righAnswerNumber).classList.add('btn-success');
+    audio_fail.play();
+}
+
+function anotherQuestionAvailable(){
+    return currentQuestion != questions[questionSection].length - 1;
 }
 
 function loadMyAnswers(selected) {
@@ -128,14 +143,18 @@ function enableNextQuestionBtn() {
 }
 
 function disableNextQuestionBtn() {
-    if (currentQuestion == finishedQuestions || currentQuestion == questions[questionSection].length - 1) {
+    if (checkForlastQuestion()) {
         document.getElementById('nextQuestion').disabled = true;
-    }
+    };
+}
+
+function checkForlastQuestion(){
+    return currentQuestion == finishedQuestions || currentQuestion == questions[questionSection].length - 1;
 }
 
 function nextQuestion() {
-    if (currentQuestion < questions[questionSection].length - 1 && currentQuestion < finishedQuestions - 1) {
-        currentQuestion++;
+    if (moreQuestionsAvailable()) {  
+    currentQuestion++;
         enableButtons();
         init();
         loadMyAnswers(myAnswers[currentQuestion]);
@@ -144,9 +163,14 @@ function nextQuestion() {
         currentQuestion++;
         init();
         enableButtons();
-    }
+    };
 }
 
+function moreQuestionsAvailable(){
+    return currentQuestion < questions[questionSection].length - 1 && currentQuestion < finishedQuestions - 1;
+}
+
+// onclick funktion that shows the previous question
 function lastQuestion() {
     if (currentQuestion > 0) {
         currentQuestion--;
