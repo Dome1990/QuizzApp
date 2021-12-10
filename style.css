@@ -57,14 +57,14 @@ body {
     margin: 0 4px 0 1px
 }
 
-.choice{
+.choice {
     display: flex;
     flex-direction: row;
     margin-bottom: 6px;
     cursor: pointer;
 }
 
-.choice:hover{
+.choice:hover {
     transform: scale(1.08);
     transition: all ease-in-out 255ms;
 }
@@ -76,7 +76,7 @@ body {
     width: fit-content;
 }
 
-.quizBoxChild{
+.quizBoxChild {
     top: 29px;
 }
 
@@ -203,11 +203,12 @@ body {
     display: none;
 }
 
-@media (max-width: 765px){
-    .quizBox{
+@media (max-width: 765px) {
+    .quizBox {
         padding-top: 40px;
     }
-    .category{
+
+    .category {
         position: unset;
         top: unset;
         bottom: unset;
@@ -218,36 +219,36 @@ body {
     }
 }
 
-@media (max-width: 400px){
-    .tropy{
+@media (max-width: 400px) {
+    .tropy {
         height: 40vh;
     }
 }
 
-@media (max-width: 350px){
-    body{
+@media (max-width: 350px) {
+    body {
         font-size: 0.7rem !important;
     }
 
-    h5{
+    h5 {
         font-size: 1rem !important;
     }
 
-    .quizBox{
+    .quizBox {
         padding-top: 20px;
     }
 
-    .tropy{
+    .tropy {
         height: 30vh;
     }
 
-    .answers{
+    .answers {
         min-width: unset;
     }
 }
 
-@media (max-width: 280px){
-    .tropy{
+@media (max-width: 280px) {
+    .tropy {
         height: 20vh;
     }
 }

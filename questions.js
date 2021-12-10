@@ -100,7 +100,7 @@ let questions = [
             "answer_2": "Eine verletzung von Programmierregeln",
             "answer_3": "Eine Verallgemeinerung der logischen Operatoren",
             "answer_4": "Damit wird ein Wert einer Variablen zugewiesen",
-            "right_answer": 3 
+            "right_answer": 3
         },
         {
             "question": "Was ist eine for-Schleife?",
@@ -117,14 +117,14 @@ let questions = [
             "answer_3": "Ein String denfiniert eine Zahl",
             "answer_4": "Ein String ist eine Zeichenkette",
             "right_answer": 4
-        },{
+        }, {
             "question": "Wie bindet man eine Java Script Datei ein?",
             "answer_1": "Mit dem a Tag",
             "answer_2": "Mit dem script Tag",
             "answer_3": "mit dem i Tag",
             "answer_4": "Mit dem js Tag",
             "right_answer": 2
-        },{
+        }, {
             "question": "In welchem Fall ist a nicht gleich b?",
             "answer_1": "a > b",
             "answer_2": "a != b",
