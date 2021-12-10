@@ -1,7 +1,7 @@
 body {
     background-color: rgb(254, 250, 239) !important;
     margin: 0;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Rubik', sans-serif !important;
 }
 
 .quizBox {
@@ -14,7 +14,7 @@ body {
 .answers {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    min-width: 300px;
 }
 
 .answer {
@@ -73,6 +73,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: fit-content;
+}
+
+.quizBoxChild{
+    top: 29px;
 }
 
 .answerLetter {
@@ -107,6 +112,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    width: 90%;
 }
 
 .nextPrevBtn {
@@ -195,4 +201,53 @@ body {
     z-index: 1;
     height: 50vh;
     display: none;
+}
+
+@media (max-width: 765px){
+    .quizBox{
+        padding-top: 40px;
+    }
+    .category{
+        position: unset;
+        top: unset;
+        bottom: unset;
+        left: unset;
+        margin: 20px 0 0 0;
+        margin-left: unset;
+        align-self: center;
+    }
+}
+
+@media (max-width: 400px){
+    .tropy{
+        height: 40vh;
+    }
+}
+
+@media (max-width: 350px){
+    body{
+        font-size: 0.7rem !important;
+    }
+
+    h5{
+        font-size: 1rem !important;
+    }
+
+    .quizBox{
+        padding-top: 20px;
+    }
+
+    .tropy{
+        height: 30vh;
+    }
+
+    .answers{
+        min-width: unset;
+    }
+}
+
+@media (max-width: 280px){
+    .tropy{
+        height: 20vh;
+    }
 }

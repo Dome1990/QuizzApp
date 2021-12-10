@@ -27,7 +27,7 @@
     <img id="tropy" class="tropy" src="./img/tropy.png">
 
     <div class="quizBox">
-        <div class="card mb-3 w-100 shadow-sm" style="max-width: 540px;">
+        <div class="card mb-3 w-100 shadow-sm quizBoxChild" style="max-width: 540px;">
             <div class="row g-0 quizCard">
                 <div class="col-md-4 rounded-start select">
                     <img src="./img/logo.png" class="img-fluid rounded-start">
@@ -53,7 +53,7 @@
                     <button onclick="restart()" type="button" class="btn btn-primary">Neustart</button>
                 </div>
 
-                <div id="quizArea" class="col-md-8">
+                <div id="quizArea" class="col-md-8 d-flex flex-column align-items-center">
                     <div class="card-body">
                         <h5 id="question" class="card-title">Question</h5>
                         <div class="answers">

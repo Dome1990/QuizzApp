@@ -88,6 +88,7 @@ function showEndscreenBtn() {
 }
 
 function showEndscreen() {
+    document.getElementById('quizArea').classList.remove('d-flex');
     document.getElementById('endscreen').style.display = 'flex';
     document.getElementById('quizArea').style.display = 'none';
     document.getElementById('tropy').style.display = 'unset';
@@ -95,6 +96,7 @@ function showEndscreen() {
 }
 
 function hideEndscreen() {
+    document.getElementById('quizArea').classList.add('d-flex');
     document.getElementById('endscreen').style.display = 'none';
     document.getElementById('quizArea').style.display = 'unset';
     document.getElementById('tropy').style.display = 'none';
