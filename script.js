@@ -56,7 +56,7 @@ function markWrongAnswer(selected, selectedNumber, righAnswerNumber) {
     audio_fail.play();
 }
 
-function anotherQuestionAvailable(){
+function anotherQuestionAvailable() {
     return currentQuestion != questions[questionSection].length - 1;
 }
 
@@ -108,6 +108,7 @@ function showEndscreen() {
     document.getElementById('quizArea').style.display = 'none';
     document.getElementById('tropy').style.display = 'unset';
     showScore();
+    editHeadline();
 }
 
 function hideEndscreen() {
@@ -148,13 +149,13 @@ function disableNextQuestionBtn() {
     };
 }
 
-function checkForlastQuestion(){
+function checkForlastQuestion() {
     return currentQuestion == finishedQuestions || currentQuestion == questions[questionSection].length - 1;
 }
 
 function nextQuestion() {
-    if (moreQuestionsAvailable()) {  
-    currentQuestion++;
+    if (moreQuestionsAvailable()) {
+        currentQuestion++;
         enableButtons();
         init();
         loadMyAnswers(myAnswers[currentQuestion]);
@@ -166,7 +167,7 @@ function nextQuestion() {
     };
 }
 
-function moreQuestionsAvailable(){
+function moreQuestionsAvailable() {
     return currentQuestion < questions[questionSection].length - 1 && currentQuestion < finishedQuestions - 1;
 }
 
@@ -183,7 +184,25 @@ function lastQuestion() {
 function showScore() {
     document.getElementById('score').innerHTML = `
     <b>  ${score}/${questions[questionSection].length}</b>
-    `
+    `;
+}
+
+function editHeadline(){
+    if (questionSection == 0) {
+        document.getElementById('completeQuizName').innerHTML = `
+        HTML Quiz
+        `;
+    }
+    else if (questionSection == 1) {
+        document.getElementById('completeQuizName').innerHTML = `
+        CSS Quiz
+        `;
+    }
+    else {
+        document.getElementById('completeQuizName').innerHTML = `
+        JS Quiz
+        `;
+    };
 }
 
 function updateProgressbar() {
